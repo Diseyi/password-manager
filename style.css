@@ -4,11 +4,12 @@
   padding: 0;
 }
 
-body {
+/* body {
   background-image: linear-gradient(#232f52, #254b8c);
-}
+} */
 
 .container {
+  background-image: linear-gradient(#232f52, #254b8c);
   color: #fff;
   height: 100vh;
   font-family: sans-serif;
@@ -138,24 +139,273 @@ color: red;
   margin: 0px 0px 5px;
 }
 
-.profile-container {
-    background-color: #fff;
-    color: #232f52;
-    height: 100vh;
-}
-
 @media only screen and (min-width: 768px) {
 
-  .container {
+  .container, .profile-container {
+    width: 50%;
    padding: 100px;
+   margin: auto;
   }
-    main {
+    /* main {
         width: 50%;
         margin: 100px auto 0px ;
-      }
+      } */
 }
 
-/* 585D5C 
-807D97
-*/
 /* profile */
+
+.profile-container {
+  background-color: #fff;
+  color: #232f52;
+  height: 100vh;
+  
+}
+
+.header-div {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 20px;
+}
+
+.menu-header {
+  display: none;
+}
+
+.profile-main {
+  margin: 5px;
+}
+
+.password-container {
+  background-color: #fff;
+  border: 1px solid;
+  color: #232f52;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.password-container:hover {
+  background-color: #fff;
+}
+
+.password-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #232f52;
+}
+
+.password-wrapper:hover {
+  background-color: #a3aab5;
+}
+
+.password-itself, .delete-button, .password-title {
+  padding: 10px;
+}
+
+ .password-title {
+   font-weight: 600;
+ }
+
+.delete-button {
+background-color: #232f52;
+color: #fff;
+border: 1px solid #a3aab5;
+}
+
+.delete-button:hover {
+  background-color: rgb(167, 8, 8);
+  border: 1px solid red;
+}
+
+.menu-div {
+  background-color: #254b8c;
+  width: 100%;
+  height: 0;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  transition: 1s ease-in;
+}
+
+ul {
+  margin-top: 50px;
+}
+
+li {
+  margin: 10px;
+  font-size: 18px;
+  border: 1px solid #a3aab5;
+  padding: 10px;
+  color: #fff;
+}
+
+li:hover {
+  background-color: #232f52;
+}
+
+/* save password */
+.save-password-modal {
+  border: 1px solid #232f52;
+  background-color: #a3aab5;
+  width: 80%;
+  margin: auto;
+  color: #fff;
+  position: fixed;
+  z-index: 1;
+  top: 20%;
+  left: 10%;
+  display: none;
+}
+
+.close-save-password-modal {
+  float: right;
+  margin: 5px;
+}
+
+.save-password-h2 {
+  text-align: center;
+  margin: 10px;
+  clear: both;
+}
+
+.save-password-form {
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* create password */
+
+.create-password-modal {
+  border: 1px solid #232f52;
+  background-color: #a3aab5;
+  width: 80%;
+  margin: auto;
+  color: #232f52;
+  position: fixed;
+  z-index: 1;
+  top: 20%;
+  left: 10%;
+  display: none;
+  padding: 10px;
+}
+
+.inputDiv {
+  border: 1px solid #232f52;
+  border-radius: 5px;
+  display: flex;
+  margin: 30px 5px;
+}
+
+.create-password-input {
+  border: none;
+  padding: 2px;
+  flex: 1;
+  padding: 20px;
+  outline: none;
+}
+
+.copy {
+  background-color: #232f52;
+  border: none;
+  padding: 20px;
+  color: #fff;
+  outline: none;
+}
+
+.wrapper {
+  margin: 10px 5px;
+  padding: 5px;
+  display: flex;
+}
+
+.p {
+  flex: 1;
+}
+
+.passwordLenght {
+  width: 40px;
+  border: 1px solid #232f52;
+  outline: none;
+  
+}
+
+.checkbox {
+  padding: 5px;
+}
+
+.generate-button {
+  width: 100%;
+  background-color: #232f52;
+  border-radius: 5px;
+  color: #fff;
+  margin: 5px;
+  padding: 20px;
+  border: none;
+  outline-style: none;
+  text-transform: uppercase;
+
+}
+
+.modal {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  z-index: 1;
+  background-color: #232f52;
+  color: #fff;
+  border: 1px solid #232f52;
+  width: 25%;
+  display: none;
+  cursor: pointer;
+}
+
+.modal1 {
+  border: 1px solid #fff;
+  padding: 15px;
+}
+
+li:hover  {
+  background-color: rgb(222, 208, 245);
+}
+
+.title-form {
+border: 1px solid #fff;
+  width: 50%;
+  height: 20vh;
+  margin: auto;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  right: 25%;
+
+}
+
+.label {
+  text-align: center;
+  margin: 10px;
+}
+
+.submit {
+  margin-bottom: 10px;
+  background-color: #232f52;
+  outline: none;
+  border: 1px solid white;
+}
+
+.titleInput, .submit {
+  padding: 10px;
+  outline: #fff;
+}
+
+.div {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  /* margin-right: 10px; */
+}
