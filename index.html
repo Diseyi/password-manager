@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="title">
+            <h1 class="logo">Keyp Safe</h1>
+        </header>
+        <div class="image-container">
+            <img src="lock-image.jpg" alt="" class="image-logo">
+        </div>
+        <main>
+            <article class="article">
+                <h2 class="h2-title">Trusted and Secured</h2>
+                        <p class="p1">Create safe and secured password</p>        
+                        <p class="p2">Store all your password in one place</p>
+                <button class="get-started-button">Get Started</button>
+            </article>
+            <div class="signup-div">
+                <h2 class="form-title">Sign up</h2>
+                <form action="/profile.html" class="signup-form">
+                    <label for="signup-name">Name *</label>
+                    <br />
+                    <input type="name" name="name" id="signup-name" class="input" required>
+                    <br />
+                    <label for="signup-email">Email *</label>
+                    <br />
+                    <input type="email" name="email" id="signup-email" class="input" required>
+                    <br />
+                    <label for="signup-password">Password *</label>
+                    <br />
+                    <input type="password" name="password" id="signup-password" class="input" required>
+                    <br />
+                    <input type="submit" value="Register" class="signup-submit-button input" >
+                </form>
+                <p class="show-login">Already have an account? <span class="signin-link">Sign in</span></p>
+            </div>
+
+            <div class="signin-div">
+                <h2 class="form-title">Sign in</h2>
+                <form action="/profile.html" class="signup-form">
+
+                    <label for="signin-email">Email *</label>
+                    <br />
+                    <input type="email" name="email" id="signin-email" class="input" required>
+                    <br />
+                    <label for="signin-password">Password *</label>
+                    <br />
+                    <input type="password" name="password" id="signin-password" class="input" required>
+                    <p class="forgot-password"><a href="#" class="forgot-password">forgot password?</a></p>
+                    <br />
+                    <input type="submit" value="Log in" class="signin-submit-button input" >
+                </form>
+                <p class="show-register">Don't have an account? <span class="signup-link">Sign up</span></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

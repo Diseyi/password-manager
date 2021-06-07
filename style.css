@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(#232f52, #254b8c);
+}
+
+.container {
+  color: #fff;
+  height: 100vh;
+  font-family: sans-serif;
+  padding: 0px;
+  margin: auto;
+}
+
+.title {
+  padding: 10px;
+  height: 15vh;
+  text-align: center;
+}
+
+.logo {
+  padding: 20px;
+}
+
+.image-logo {
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: 100px;
+}
+
+main {
+  height: 65vh;
+  padding: 10px;
+  margin-top: 100px ;
+}
+
+article {
+  padding: 10px;
+  text-align: center;
+}
+
+.h2-title {
+  padding: 20px;
+}
+
+.p1, .p2 {
+  margin: 10px;
+}
+
+
+.get-started-button {
+  background-color: #a3aab5;
+  border: 1px solid;
+  border-radius: 50px;
+  color: #232f52;
+  font-size: 20px;
+  margin: 30px 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+.get-started-button:hover {
+  color: #fff;
+  background-color: #232f52;
+  border: 1px inset;
+}
+
+.signup-div {
+  display: none;
+}
+
+.form-title {
+  text-align: center;
+  padding: 5px;
+}
+
+.signup-form {
+  padding: 20px;
+}
+
+label {
+  font-size: 16px;
+  padding: 5px 5px 20px;
+}
+
+.signup-name:invalid:required {
+color: red;
+}
+
+.input {
+  border: 1px solid #232f52;
+  border-radius: 5px;
+  margin: 5px 0px 20px;
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  outline: #232f52;
+}
+
+.signup-submit-button,
+.signin-submit-button {
+  background-color: #a3aab5;
+  color: #232f52;
+  font-size: 20px;
+  clear: both;
+}
+
+.show-login,
+.show-register {
+  text-align: center;
+  font-size: 16px;
+}
+
+.signin-link,
+.signup-link {
+  color: #fff;
+}
+
+.signin-link:hover,
+.signup-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.signin-div {
+  display: none;
+}
+
+.forgot-password {
+  float: right;
+  text-decoration: none;
+  color: #fff;
+  margin: 0px 0px 5px;
+}
+
+.profile-container {
+    background-color: #fff;
+    color: #232f52;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .container {
+   padding: 100px;
+  }
+    main {
+        width: 50%;
+        margin: 100px auto 0px ;
+      }
+}
+
+/* 585D5C 
+807D97
+*/
+/* profile */
