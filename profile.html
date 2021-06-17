@@ -25,7 +25,7 @@
             <ul>
                 <li class="create-a-password">create password</li>
                 <li class="save-a-password">save a password</li>
-                <li><a href="index.html">logmout</a></li>
+                <li class="li-logout"><a href="index.html" class="logout-profile">logout</a></li>
 
             </ul>
         </div>
@@ -47,36 +47,36 @@
             <h2 class="create-password-h2">Create a password</h2>
 
             <!-- <form action="" class="create-password-form"> -->
-                <div class="inputDiv">
-                    <input type="text" name="text" class="create-password-input" aria-label="text">
-                    <button class="copy">copy</button>
+            <div class="inputDiv">
+                <input type="text" name="text" class="create-password-input" aria-label="text">
+                <button class="copy">copy</button>
+            </div>
+
+            <div class="choosePasssword">
+                <div class="wrapper">
+                    <p class=" p p-password">Password Length</p>
+                    <input type="text" name="text" class="passwordLenght" value="10" min="1" max="50">
                 </div>
 
-                <div class="choosePasssword">
-                    <div class="wrapper">
-                        <p class=" p p-password">Password Length</p>
-                        <input type="text" name="text" class="passwordLenght" value="10" min="1" max="50">
-                    </div>
-
-                    <div class="wrapper letter">
-                        <p class=" p p-letter">include uppercase letters</p>
-                        <input type="checkbox" name="checkbox" class="checkbox upperletter">
-
-                    </div>
-                    <div class="wrapper">
-                        <p class=" p p-number">include numbers</p>
-                        <input type="checkbox" name="checkbox" class="checkbox number">
-
-                    </div>
-                    <div class="wrapper symbol">
-                        <p class=" p p-symbol">include symbols</p>
-                        <input type="checkbox" name="checkbox" class="checkbox symbol">
-                    </div>
+                <div class="wrapper letter">
+                    <p class=" p p-letter">include uppercase letters</p>
+                    <input type="checkbox" name="checkbox" class="checkbox upperletter">
 
                 </div>
-                <div class="">
-                    <input type="button" value="generate password" class="generate-button">
+                <div class="wrapper">
+                    <p class=" p p-number">include numbers</p>
+                    <input type="checkbox" name="checkbox" class="checkbox number">
+
                 </div>
+                <div class="wrapper symbol">
+                    <p class=" p p-symbol">include symbols</p>
+                    <input type="checkbox" name="checkbox" class="checkbox symbol">
+                </div>
+
+            </div>
+            <div class="">
+                <input type="button" value="generate password" class="generate-button">
+            </div>
 
             <!-- </form> -->
 
@@ -87,15 +87,17 @@
             </div>
         </div>
 
-        <form class="title-form">
-            <label for="title" class="label">Title</label>
-            <input type="text" name="title" class="titleInput">
-            <input type="submit" value="add" class=" submit">
-        </form>
+        <div class="title-div">
+            <form class="title-form">
+                <label for="title" class="label">Tag</label>
+                <input type="text" name="title" class="titleInput">
+                <input type="submit" value="add" class=" submit">
+            </form>
+        </div>
 
         <main class="profile-main">
             <div class="main-div">
-
+                <p class="no-password-created">Create Password</p>
             </div>
         </main>
     </div>

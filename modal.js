@@ -35,6 +35,8 @@ openMenu.addEventListener("click", () => {
   });
   
   createAPassword.addEventListener("click", () => {
+    createPasswordInput.value = ""
+    modal.style.display = "none"
     menuDiv.style.height = "0";
     menuHeader.style.display = "none";
     profileHeader.style.display = "flex";
@@ -47,11 +49,12 @@ openMenu.addEventListener("click", () => {
       savePasswordModal.style.display = "none";
       createPasswordModal.style.display = "none";
       mainDiv.style.display = "block";
+      modal.style.display = "none"
     });
   }
   
   for (let i = 0; i < deleteButton.length; i++) {
-    deleteButton[i].addEventListener("click", (e) => {
+    deleteButton[i].addEventListener("click", ( ) => {
       
       console.log("ju");
       // let item = e.target.parentNode

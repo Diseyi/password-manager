@@ -25,6 +25,8 @@ const savedPassword = document.querySelector(".savedPassword");
 const titleForm = document.querySelector(".title-form");
 const submit = document.querySelector(".submit");
 const titleInput = document.querySelector(".titleInput");
+const noPasswordCreated = document.querySelector(".no-password-created");
+const titleDiv = document.querySelector(".title-div")
 
 const uppercaseCharCode = highLowValue(65, 90);
 const lowercaseCharCode = highLowValue(97, 122);
@@ -87,17 +89,16 @@ copy.addEventListener("click", () => {
 });
 
 // copyPassword.addEventListener("click", () => {
-//   // const password = createPasswordInput.value;
-//   // password.select();
-//   // password.setSelectionRange(0, 99999);
-//   // document.execCommand("copy");
+
 //   alert("copied")
     
 // });
 
 copyAndSave.addEventListener("click", () => {
   createPasswordModal.style.display = "none";
-  titleForm.style.display = "flex";
+  titleDiv.style.display = "flex";
+
+  console.log("hi");
 });
 
 titleForm.addEventListener("submit", (e) => {
@@ -105,71 +106,78 @@ titleForm.addEventListener("submit", (e) => {
   const password = document.createTextNode(createPasswordInput.value);
   const passwordTitleNode = document.createTextNode(titleInput.value);
   const deleteNode = document.createTextNode("delete");
+  const titleDiv = document.querySelector(".title-div")
 
-  const passwordContainer = document.createElement("div");
-  passwordContainer.classList.add("password-container");
-
-  const passwordWrapper = document.createElement("div");
-  passwordWrapper.classList.add("password-wrapper");
-
-  const passwordTitle = document.createElement("p");
-  passwordTitle.classList.add("password-title");
-
-  const passwordItself = document.createElement("p");
-  passwordItself.classList.add("password-itself");
-
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete-button");
-
-  passwordItself.appendChild(password);
-  passwordTitle.appendChild(passwordTitleNode);
-  deleteButton.appendChild(deleteNode);
-  passwordWrapper.appendChild(passwordTitle);
-  passwordWrapper.appendChild(passwordItself);
-  passwordContainer.appendChild(passwordWrapper);
-  passwordContainer.appendChild(deleteButton);
-  mainDiv.appendChild(passwordContainer);
-
-  titleForm.style.display = "none";
-  mainDiv.style.display = "block";
-});
-
-
-savePasswordForm.addEventListener("submit", (e) => {
-  e.preventDefault()
-
-  const password = document.createTextNode(passwordSavePassword.value);
-  const passwordTitleNode = document.createTextNode(tagSavePassword.value);
-  const deleteNode = document.createTextNode("delete");
-
-  const passwordContainer = document.createElement("li");
-  passwordContainer.classList.add("password-container");
-
-  const passwordWrapper = document.createElement("div");
-  passwordWrapper.classList.add("password-wrapper");
-
-  const passwordTitle = document.createElement("p");
-  passwordTitle.classList.add("password-title");
-
-  const passwordItself = document.createElement("p");
-  passwordItself.classList.add("password-itself");
-
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete-button");
-
-  passwordItself.appendChild(password);
-  passwordTitle.appendChild(passwordTitleNode);
-  deleteButton.appendChild(deleteNode);
-  passwordWrapper.appendChild(passwordTitle);
-  passwordWrapper.appendChild(passwordItself);
-  passwordContainer.appendChild(passwordWrapper);
-  passwordContainer.appendChild(deleteButton);
-  mainDiv.appendChild(passwordContainer);
-
-  passwordSavePassword.value = "";
-  tagSavePassword.value = "";
-  savePasswordModal.style.display = "none";
-  mainDiv.style.display = "block";
+  if (titleInput.value == "") {
+    alert("Need Password Tag"); 
+  } else {
+    const passwordContainer = document.createElement("div");
+    passwordContainer.classList.add("password-container");
+  
+    const passwordWrapper = document.createElement("div");
+    passwordWrapper.classList.add("password-wrapper");
+  
+    const passwordTitle = document.createElement("p");
+    passwordTitle.classList.add("password-title");
+  
+    const passwordItself = document.createElement("p");
+    passwordItself.classList.add("password-itself");
+  
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+  
+    noPasswordCreated.style.display = "none";
+    passwordItself.appendChild(password);
+    passwordTitle.appendChild(passwordTitleNode);
+    deleteButton.appendChild(deleteNode);
+    passwordWrapper.appendChild(passwordTitle);
+    passwordWrapper.appendChild(passwordItself);
+    passwordContainer.appendChild(passwordWrapper);
+    passwordContainer.appendChild(deleteButton);
+    mainDiv.appendChild(passwordContainer);
+  
+    titleInput.value = "";
+    titleDiv.style.display = "none";
+    mainDiv.style.display = "block";
+}})
+  
+  
+  savePasswordForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+  
+    const password = document.createTextNode(passwordSavePassword.value);
+    const passwordTitleNode = document.createTextNode(tagSavePassword.value);
+    const deleteNode = document.createTextNode("delete");
+  
+    const passwordContainer = document.createElement("div");
+    passwordContainer.classList.add("password-container");
+  
+    const passwordWrapper = document.createElement("div");
+    passwordWrapper.classList.add("password-wrapper");
+  
+    const passwordTitle = document.createElement("p");
+    passwordTitle.classList.add("password-title");
+  
+    const passwordItself = document.createElement("p");
+    passwordItself.classList.add("password-itself");
+  
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+  
+    noPasswordCreated.style.display = "none";
+    passwordItself.appendChild(password);
+    passwordTitle.appendChild(passwordTitleNode);
+    deleteButton.appendChild(deleteNode);
+    passwordWrapper.appendChild(passwordTitle);
+    passwordWrapper.appendChild(passwordItself);
+    passwordContainer.appendChild(passwordWrapper);
+    passwordContainer.appendChild(deleteButton);
+    mainDiv.appendChild(passwordContainer);
+  
+    passwordSavePassword.value = "";
+    tagSavePassword.value = "";
+    savePasswordModal.style.display = "none";
+    mainDiv.style.display = "block";
 })
 
 // for (let i = 0; i < deleteButton.length; i++) {
