@@ -124,6 +124,7 @@ titleForm.addEventListener("submit", (e) => {
     passwordItself.classList.add("password-itself");
   
     const deleteButton = document.createElement("button");
+    deleteButton.onclick = function(e){e.target.parentElement.remove()};
     deleteButton.classList.add("delete-button");
   
     noPasswordCreated.style.display = "none";
@@ -163,6 +164,7 @@ titleForm.addEventListener("submit", (e) => {
   
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
+    deleteButton.onclick = function(e){e.target.parentElement.remove()};
   
     noPasswordCreated.style.display = "none";
     passwordItself.appendChild(password);
@@ -179,12 +181,3 @@ titleForm.addEventListener("submit", (e) => {
     savePasswordModal.style.display = "none";
     mainDiv.style.display = "block";
 })
-
-// for (let i = 0; i < deleteButton.length; i++) {
-//   deleteButton[i].addEventListener("click", (e) => {
-//     // deleteButton[i].parentElement.remove()
-//     console.log("hi")
-    
-    
-//   });
-// }
