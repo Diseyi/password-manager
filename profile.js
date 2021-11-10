@@ -81,23 +81,42 @@ function highLowValue(low, high) {
 }
 
 copy.addEventListener("click", () => {
+
+  // Code from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
+
   if (createPasswordInput.value == "") {
-        alert("create a password");
-      } else {
-        modal.style.display = "block";
-      }
+    alert("create a password");
+  } else {
+  
+    if (!navigator.clipboard) {
+      fallbackCopyTextToClipboard(createPasswordInput.value);
+      return;
+    }
+    navigator.clipboard.writeText(createPasswordInput.value).then(function() {
+      console.log('Copied to clickboard...');
+    }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+    
+    modal.style.display = "block";
+  }
 });
 
-// copyPassword.addEventListener("click", () => {
-
-//   alert("copied")
-    
-// });
-
 copyAndSave.addEventListener("click", () => {
+
+  // Code from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
   createPasswordModal.style.display = "none";
   titleDiv.style.display = "flex";
-
+  
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(createPasswordInput.value);
+    return;
+  }
+  navigator.clipboard.writeText(createPasswordInput.value).then(function() {
+    console.log('Copied to clickboard...');
+  }, function(err) {
+      console.error('Async: Could not copy text: ', err);
+  });
   console.log("hi");
 });
 
