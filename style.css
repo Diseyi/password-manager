@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,6 +8,7 @@
 
 body {
   background-image: url(endless-constellation.svg);
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .container {
@@ -97,8 +100,8 @@ label {
   border-radius: 5px;
   margin: 5px 0px 20px;
   width: 100%;
-  padding: 6px;
-  font-size: 15px;
+  padding: 10px;
+  font-size: 18px;
   outline: #232f52;
 }
 
@@ -306,7 +309,7 @@ li:hover {
 .create-password-input {
   border: none;
   padding: 2px;
-  flex: 1;
+  width: 80%;
   padding: 20px;
   outline: none;
 }
@@ -317,6 +320,7 @@ li:hover {
   padding: 20px;
   color: #fff;
   outline: none;
+  width: 20%;
 }
 
 .wrapper {
@@ -359,7 +363,7 @@ li:hover {
   background-color: #232f52;
   color: #fff;
   border: 1px solid #232f52;
-  width: 25%;
+  width: 30%;
   display: none;
   cursor: pointer;
 }

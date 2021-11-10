@@ -5,7 +5,7 @@ const mainDiv = document.querySelector(".main-div");
 const profileHeader = document.querySelector(".profile-header");
 const closeMenu = document.querySelector(".close-menu");
 const openMenu = document.querySelector(".open-menu");
-const deleteButton = document.querySelectorAll(".delete-button");
+const deleteButton = document.querySelector(".delete-button");
 const saveAPassword = document.querySelector(".save-a-password");
 const savePasswordModal = document.querySelector(".save-password-modal");
 const closeSavePasswordModal = document.querySelectorAll(
@@ -53,8 +53,8 @@ openMenu.addEventListener("click", () => {
     });
   }
   
-  for (let i = 0; i < deleteButton.length; i++) {
-    deleteButton[i].addEventListener("click", ( ) => {
+  
+    deleteButton.addEventListener("click", ( ) => {
       
       console.log("ju");
       // let item = e.target.parentNode
@@ -62,4 +62,4 @@ openMenu.addEventListener("click", () => {
       
       // deleteButton[i].style.color = "green";
     });
-  }
+  
