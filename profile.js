@@ -81,23 +81,42 @@ function highLowValue(low, high) {
 }
 
 copy.addEventListener("click", () => {
+
+  // Code from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
+
   if (createPasswordInput.value == "") {
-        alert("create a password");
-      } else {
-        modal.style.display = "block";
-      }
+    alert("create a password");
+  } else {
+  
+    if (!navigator.clipboard) {
+      fallbackCopyTextToClipboard(createPasswordInput.value);
+      return;
+    }
+    navigator.clipboard.writeText(createPasswordInput.value).then(function() {
+      console.log('Copied to clickboard...');
+    }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+    
+    modal.style.display = "block";
+  }
 });
 
-// copyPassword.addEventListener("click", () => {
-
-//   alert("copied")
-    
-// });
-
 copyAndSave.addEventListener("click", () => {
+
+  // Code from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
   createPasswordModal.style.display = "none";
   titleDiv.style.display = "flex";
-
+  
+  if (!navigator.clipboard) {
+    fallbackCopyTextToClipboard(createPasswordInput.value);
+    return;
+  }
+  navigator.clipboard.writeText(createPasswordInput.value).then(function() {
+    console.log('Copied to clickboard...');
+  }, function(err) {
+      console.error('Async: Could not copy text: ', err);
+  });
   console.log("hi");
 });
 
@@ -124,6 +143,7 @@ titleForm.addEventListener("submit", (e) => {
     passwordItself.classList.add("password-itself");
   
     const deleteButton = document.createElement("button");
+    deleteButton.onclick = function(e){e.target.parentElement.remove()};
     deleteButton.classList.add("delete-button");
   
     noPasswordCreated.style.display = "none";
@@ -163,6 +183,7 @@ titleForm.addEventListener("submit", (e) => {
   
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
+    deleteButton.onclick = function(e){e.target.parentElement.remove()};
   
     noPasswordCreated.style.display = "none";
     passwordItself.appendChild(password);
@@ -179,12 +200,3 @@ titleForm.addEventListener("submit", (e) => {
     savePasswordModal.style.display = "none";
     mainDiv.style.display = "block";
 })
-
-// for (let i = 0; i < deleteButton.length; i++) {
-//   deleteButton[i].addEventListener("click", (e) => {
-//     // deleteButton[i].parentElement.remove()
-//     console.log("hi")
-    
-    
-//   });
-// }
